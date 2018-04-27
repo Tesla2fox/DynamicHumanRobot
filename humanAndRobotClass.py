@@ -51,17 +51,21 @@ class Robot:
         self.changeTime = 0
         self.eventType = RobotEvent.NONE.value
         self.controlHumID = -1
+        self.eventTime = 0
+        self.eventHappenTime = 0
+        self.eventEndTime = 0
     def displayRobot(self):
         print('[Robot] ',self.index,' mode = ',self.mode
               ,' humID = ',self.controlHumID)
     def randEventTime(self):
         if(self.eventType%2):
             print('是奇数事件')
-            if 
+#            if 
         else:
             print('是偶数事件')
-                
-            
+#        self.eventTime = self.changeTime + random.uniform(2,5)        
+        self.eventHappenTime = self.eventEndTime + random.uniform(2,5)
+        self.eventEndTime = self.eventHappenTime + random.uniform(3,6)
         
 
 class Human:
@@ -78,7 +82,7 @@ class Human:
         print('[Human] ',self.index,' mode = ',self.mode)
     def saveDataInside(self):
         self.cTimeLst.append(copy.copy(self.changeTime))
-        self.cworkLoadLst.append(copy.copy(self.cworkload))
+        self.cworkLoadLst.append(copy.copy(self.cWorkload))
 #    def saveData(self,lstx = [],lsty = []):
 #        lstx.append(copy.copy(self.changeTime))
 #        lsty.append(copy.copy(self.workload))
