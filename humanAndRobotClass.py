@@ -19,12 +19,16 @@ from random import uniform
 import random
 import copy
 
+random.seed(1)
 
 from enum import Enum,auto
 class RobotMode(Enum):
     MBC = auto()
     MBE = auto()
     NONE = auto()
+class DrawType(Enum):
+    schedule = auto()
+    no_schedule =auto()
     
 class HumanMode(Enum):
     MBC = auto()
@@ -57,12 +61,14 @@ class Robot:
     def displayRobot(self):
         print('[Robot] ',self.index,' mode = ',self.mode
               ,' humID = ',self.controlHumID)
+        print('[Robot] ', 'happenEventTime = ', self.eventHappenTime
+              ,'endEventTime  = ', self.eventEndTime)
     def randEventTime(self):
-        if(self.eventType%2):
-            print('是奇数事件')
-#            if 
-        else:
-            print('是偶数事件')
+#        if(self.eventType%2):
+#            print('是奇数事件')
+##            if 
+#        else:
+#            print('是偶数事件')
 #        self.eventTime = self.changeTime + random.uniform(2,5)        
         self.eventHappenTime = self.eventEndTime + random.uniform(2,5)
         self.eventEndTime = self.eventHappenTime + random.uniform(3,6)
@@ -73,8 +79,8 @@ class Human:
         self.mode  = HumanMode.MBE.value
         self.index = i
         #cworkLoad 表示当前工作负荷
-        self.cWorkload = random.randint(7,10)
-        self.maxWorkLoad = self.cWorkload
+        self.cWorkLoad = random.randint(7,10)
+        self.maxWorkLoad = self.cWorkLoad
         self.changeTime = 0
         self.cTimeLst = []
         self.cworkLoadLst = []
@@ -82,7 +88,7 @@ class Human:
         print('[Human] ',self.index,' mode = ',self.mode)
     def saveDataInside(self):
         self.cTimeLst.append(copy.copy(self.changeTime))
-        self.cworkLoadLst.append(copy.copy(self.cWorkload))
+        self.cworkLoadLst.append(copy.copy(self.cWorkLoad))
 #    def saveData(self,lstx = [],lsty = []):
 #        lstx.append(copy.copy(self.changeTime))
 #        lsty.append(copy.copy(self.workload))

@@ -20,6 +20,7 @@ class EventMode(Enum):
 
 
 
+
 # return dictionary
 
 def findEventRob(happenTimeLst = [], endTimeLst =[]):
@@ -40,9 +41,6 @@ function  is upper
 g_robNum = 15
 g_humNum = 5
 
-workChangeDict ={'MBE':2,'MBC':3}    
-
-
 humDrawLstx = []
 humDrawLsty = []
 
@@ -58,6 +56,7 @@ happenTimeLst  = []
 #事件结束时刻
 endTimeLst = []
 
+    
     
 
 
@@ -108,6 +107,7 @@ for eventNum in range(100):
          if(controlHumID ==0):
              print("[end] cWorkLoad = ",humLst[controlHumID].cWorkLoad)
 
+
          rob.randEventTime()
 #         dur = rob.eventEndTime - rob.eventHappenTime
 #         print('dur = ',dur)
@@ -116,6 +116,7 @@ for eventNum in range(100):
      
 #     rob.displayRobot()
      hum.saveDataInside()
-        
-mydraw.AgentWorkLoadTrace(humLst,hr.DrawType.no_schedule.value)
+    
+    
+mydraw.AgentWorkLoadTrace(humLst)
 
