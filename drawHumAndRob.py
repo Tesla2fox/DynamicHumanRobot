@@ -46,7 +46,10 @@ def AgentWorkLoadTrace(humLst = [], drawType = 0):
                            y=lsty,
                            mode= 'lines+markers',
                            name = '操作员的最大工作负荷',
-                           line = dict(shape ='v'))        
+                           line = dict(
+                                   color=('rgb(238,29,36)'),
+                                   shape ='v',
+                                   width = 6))        
         data = []
         data.append(cp.copy(trace))
         data.append(cp.copy(maxTrace))

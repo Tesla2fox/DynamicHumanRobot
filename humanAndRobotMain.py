@@ -103,11 +103,10 @@ for eventNum in range(100):
          hum.changeTime = rob.eventEndTime
          hum.saveDataInside()
 
-         humLst[controlHumID].cWorkLoad = humLst[controlHumID].cWorkLoad + 3
-         
+         humLst[controlHumID].cWorkLoad = humLst[controlHumID].cWorkLoad + 3         
          if(controlHumID ==0):
              print("[end] cWorkLoad = ",humLst[controlHumID].cWorkLoad)
-
+             
          rob.randEventTime()
 #         dur = rob.eventEndTime - rob.eventHappenTime
 #         print('dur = ',dur)
