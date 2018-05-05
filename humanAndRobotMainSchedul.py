@@ -117,9 +117,9 @@ for eventNum in range(100):
          mode = 1
          if(modeDeVal>7):
              #例外管理
-             mode    = hr.HumanMode.MBE.value
+             mode  = hr.HumanMode.MBE.value
          else:
-             if(modeDeVal<5):
+             if(modeDeVal<7):
                  #同意管理
                  mode = hr.HumanMode.MBC.value
              else:

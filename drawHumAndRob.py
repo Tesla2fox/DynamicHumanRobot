@@ -12,6 +12,7 @@ import plotly
 import copy as cp
 import humanAndRobotClass as hr
 
+py.sign_in('tesla_fox', 'HOTRQ3nIOdYUUszDIfgN')
 
 def AgentWorkLoadTrace(humLst = [], drawType = 0):
 #    tracel = []
@@ -54,7 +55,12 @@ def AgentWorkLoadTrace(humLst = [], drawType = 0):
         data.append(cp.copy(trace))
         data.append(cp.copy(maxTrace))
         fig = dict(data = data ,layout = layout)
+
         plotly.offline.plot(fig,filename = 'humStateFig'+str(i) + filePostfix)
-#        tracel.append(cp.copy(trace))
-#    plotly.offline.plot(tracel,'humStateFig')
+
+#        plotly.offline.plot(fig,image='png',image_filename = 'humStateFig'+str(i) + filePostfix)
+#        py.image.save_as(fig,filename = 'humStateFig'+str(i) + filePostfix+'.png')
+#       plotly.offline.plot()
+#       tracel.append(cp.copy(trace))
+#       plotly.offline.plot(tracel,'humStateFig')
     
